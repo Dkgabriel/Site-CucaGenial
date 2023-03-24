@@ -140,7 +140,6 @@ section{
   
 section  img{
     width: 500px;
-    margin-left: 250px;
     border-radius: 50%;
     position: relative;
     animation: float 3s ease-in-out infinite;
