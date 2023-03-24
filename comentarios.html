@@ -4,21 +4,28 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Comentarios</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Cuca genial</title>
     <link rel="stylesheet" href="estilo/style.css">
 </head>
 <body>
-    <header class="cabeçalho">
-        <img src="fotos/lgcuca800px.png" alt="" width="6%">
-        <nav>
-            <a href="index.html">Inicial</a>
-            <a href="criadores.html">Criadores</a>
-            <a href="comentarios.html">comentarios</a>
-            <a href="sobrepag.html">Sobre</a>
-        </nav>
-    </header>
-    <div class="principal-coment">
+    <nav>
+        <div class="logo">
+            <a href="index.html"><img src="fotos/lgcuca800px.png" alt="" ></a>
+        </div>
+        <div class="menu-btn">
+            <i class="fa fa-bars fa-2x" onclick="menuShow()"></i>
+        </div>
 
+        <ul>
+            <li><a href="index.html" >Home</a></li>
+            <li><a href="sobrepag.html"> Sobre</a></li>
+            <li><a href="criadores.html"> Criadores</a></li>
+            <li><a href="comentarios.html"class="active"> Comentarios</a></li>
+        </ul>
+    </nav>
+    <div class="principal-coment">
+        <h1>Comentarios</h1>
         <div class="cometarios">
 
             <div class="coluna-1">
@@ -65,5 +72,6 @@
 
         </div>
     </div>
+    <script src="estilo/cucagenial.js"></script>
 </body>
 </html>

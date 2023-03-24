@@ -38,45 +38,65 @@
 body{
     background-color: #101728;
 }
-main{
-  width: 900px;
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-.cabeçalho{
+nav{
     display: flex;
-    flex-direction: row;
+    background-image: linear-gradient(to top,#101728,#2c437f);
+    width: 100%;
     align-items: center;
     justify-content: space-between;
-    padding-top: 10px;
-    padding-bottom: 40px;
-    background-image: linear-gradient(to top,#101728,#2c437f);
+    padding: 0 50px 0 100px;
+    flex-wrap: wrap;
+    z-index: 1;
 }
-.cabeçalho > nav {
-    margin-right: 15px;
+nav .logo  img{
+    width: 100px;
+    cursor: pointer
 }
-nav > a{
+nav ul{
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+}
+nav ul li{
+    margin: 0 5px;
+}
+nav ul li a{
     color: white;
-    font-family: 'Fredoka One', Helvetica, sans-serif;
     text-decoration: none;
-    margin: 5px;
     font-size: 25px;
-    
+    font-weight: 500;
+    padding: 8px 15px;
+    margin-right: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
 }
-nav > a:hover{
+nav ul li a.active,
+nav ul li a:hover{
     color: red;
-    background-color: #1d2846d4;
-    padding: 10px;
-    border-radius: 10px;
 }
+nav .menu-btn i{
+    color: white;
+    cursor: pointer;
+    display: none;
+}
+
 
 section{
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    max-width: 800px;
-    min-width: 500px;
+    width: 100%;
+    padding: 50px;
 }
-
 .txt{
     margin-left: 90px;
 }
@@ -101,13 +121,29 @@ section{
     margin: 25px;
     font-size: 30px;
     text-shadow: 6px 6px 8px rgba(0, 0, 0, 0.63);
+    text-align: center;
     
 }
 
-
+ 
+  @keyframes float {
+    0% {
+      transform: translate(0, 0);
+    }
+    50% {
+      transform: translate(0, -20px);
+    }
+    100% {
+      transform: translate(0, 0);
+    }
+  }
+  
 section  img{
     width: 500px;
     margin-left: 250px;
+    border-radius: 50%;
+    position: relative;
+    animation: float 3s ease-in-out infinite;
 }
 button{
     color:white;
@@ -120,22 +156,53 @@ button{
     box-shadow: 10px rgba(0, 0, 0, 0.711);
     background-image: linear-gradient(to bottom,#ff66c4,#1f41bb );
     margin-left: 150px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
 }
-.rodape{
+
+  
+button:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    opacity: 0;
+    }
+  
+  button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  button:active:after {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+    transition: all 0.3s ease-in-out;
+  }
+  
+footer{
     background-image: linear-gradient(to bottom,#101728,#2c437f);
-    padding-top: 20px;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 30px;
 }
-.rodape > p{
+footer > p{
     font-family: Arial, Helvetica, sans-serif;
     color: white;
     text-align: center;
+    margin-top: 50px;
 }
-.rodape > p:hover{
-    color: rgb(224, 40, 40);    
-}
+
 /* pagina sobre */
 .principal-sobre{
-    max-width: 100%;
+   padding: 40px;
 }
 .Sobre > h1{
     color: #9340ff;
@@ -181,7 +248,15 @@ button{
     margin: 20px;
     width: 90%;
 }
-
+.principal-coment > h1{
+    font-size: 60px;
+    color: #fd1842;
+    text-align: center;
+    font-family: 'codec', Helvetica, sans-serif;
+    padding: 10px;
+    margin: 20px;
+    cursor: pointer;
+}
 
 .coment-colun p{
     color: white;
@@ -203,6 +278,9 @@ button{
     margin-left: 250px;
 }
 /* Comentarios */
+.principal-coment > h1{
+    font-size: 50px;
+}
 .coment-1{
     display: flex;
 }
@@ -272,4 +350,131 @@ button{
     display: flex;
     justify-content: center;
     margin-bottom: 10px;
+}
+
+@media (max-width: 920px){
+    nav .menu-btn i{
+        display: block;
+    }
+    nav ul{
+        position: fixed;
+        top: 100px;
+        left: -100%;
+        background-color: #101728;
+        height: 100vh;
+        width: 100%;
+        text-align: center;
+        display: block;
+        transition: all 0.3s ease;
+        z-index: 1;
+    }
+    nav ul.open{
+        left: 0;
+    }
+    nav ul li{
+        width: 100%;
+        margin: 50px 0;
+    }
+    nav ul li a{
+        font-size: 23px;
+    }
+    nav ul li a.active,
+    nav ul li a:hover{
+    background: none;
+    color: #fd1842;
+    }
+    nav .logo  img {
+        width:  90px;
+    }   
+    section{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    main{
+        height: 100%;
+    }
+    .txt{
+        margin: 10px;
+    }
+    .txt > h1 {
+        font-size: 100px;
+        margin-top: -80px;
+        margin-bottom: 20px;
+    }
+    .txt > h2 {
+        font-size: 90px;
+        margin-top: -60px;
+    }
+    .txt > p {
+        font-size: 20px;
+    }
+
+    .img-logo > img{
+        width: 300px;
+        margin: auto;
+    }
+    button{
+        display: flex;
+        margin: auto;
+    }
+    footer{
+        position: absolute;
+        width: 100%;
+    }
+    footer > p{
+        font-size: 20px;
+    }
+    /* pagina sobre */
+    .Sobre > h1{
+        font-size: 30px;
+    }
+    .Sobre > h2{
+        font-size: 30px;
+    }
+    .txt2 > p{
+        font-size: 20px;
+        text-align: center;
+    }
+    /* criadores */
+    .h1-criadores{
+        font-size: 20px;
+        padding: 10px;
+    }
+    .coluna-criadores{
+        width: 100%;
+    }
+    .coluna-criadores img{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 70%;
+        margin-left: 60px;
+    }
+    .cr-coluna1{
+        display: flex;
+        flex-direction: column;
+    }
+    .cr-coluna2{
+        display: flex;
+        flex-direction: column;
+    }
+    .cr-coluna3{
+        display: flex;
+        flex-direction: column;
+    }
+    .cr-coluna4{
+        display: flex;
+        flex-direction: column;
+    }
+    /* comentarios */
+    .cometarios{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .coluna-2{
+        margin: 20px;
+    }
 }

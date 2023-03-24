@@ -4,19 +4,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Criadores</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Cuca genial</title>
     <link rel="stylesheet" href="estilo/style.css">
 </head>
 <body>
-    <header class="cabeçalho">
-        <img src="fotos/lgcuca800px.png" alt="" width="6%">
-        <nav>
-            <a href="index.html">Inicial</a>
-            <a href="criadores.html">Criadores</a>
-            <a href="comentarios.html">comentarios</a>
-            <a href="sobrepag.html">Sobre</a>
-        </nav>
-    </header>
+    <nav>
+        <div class="logo">
+            <a href="index.html"><img src="fotos/lgcuca800px.png" alt="" ></a>
+        </div>
+        <div class="menu-btn">
+            <i class="fa fa-bars fa-2x" onclick="menuShow()"></i>
+        </div>
+
+        <ul>
+            <li><a href="index.html" >Home</a></li>
+            <li><a href="sobrepag.html"> Sobre</a></li>
+            <li><a href="criadores.html" class="active"> Criadores</a></li>
+            <li><a href="comentarios.html"> Comentarios</a></li>
+        </ul>
+    </nav>
     <div class="principal-criadores">
 
         <div class="h1-criadores">
@@ -109,5 +116,6 @@
             
         </div>
     </div>
+    <script src="estilo/cucagenial.js"></script>
 </body>
 </html>
