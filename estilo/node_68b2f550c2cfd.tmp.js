@@ -89,7 +89,7 @@ nav .menu-btn i{
 }
 
 
-.principal-cuca{
+section{
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -126,7 +126,7 @@ nav .menu-btn i{
 }
 
  
-@keyframes float {
+  @keyframes float {
     0% {
       transform: translate(0, 0);
     }
@@ -136,9 +136,10 @@ nav .menu-btn i{
     100% {
       transform: translate(0, 0);
     }
-}
+  }
   
-.principal-cuca  img{
+section  img{
+    width: 500px;
     border-radius: 50%;
     position: relative;
     animation: float 3s ease-in-out infinite;
@@ -190,6 +191,7 @@ footer{
     cursor: pointer;
     padding: 10px;
     font-size: 30px;
+    z-index: 1;
 }
 footer > p{
     font-family: Arial, Helvetica, sans-serif;
@@ -239,10 +241,6 @@ footer > p{
     align-items: center;
     justify-content: center;
 }
-.principal-sobre  p{
-    text-align: center;
-    font-size: 30px;
-}
 /* pagina do comentarios */
 
 .cometarios{
@@ -282,11 +280,6 @@ footer > p{
 /* Comentarios */
 .principal-coment > h1{
     font-size: 50px;
-}
-.cometarios{
-    margin: auto;
-    display: flex;
-    justify-content: center;
 }
 .coment-1{
     display: flex;
@@ -393,7 +386,7 @@ footer > p{
     nav .logo  img {
         width:  90px;
     }   
-    .principal-cuca{
+    section{
         display: flex;
         flex-direction: column-reverse;
     }
